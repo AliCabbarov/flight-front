@@ -40,7 +40,6 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GKE_SA_KEY }}
           CLUSTER_NAME: ${{ env.GKE_CLUSTER }}
           ZONE_NAME: ${{ env.GKE_ZONE }}
-
           with:
             args: apply -f k8s/front-deploy.yaml
 
