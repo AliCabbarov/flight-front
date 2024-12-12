@@ -43,13 +43,21 @@ jobs:
         uses: ameydev/gke-kubectl-action@master
         with:
           args: |
-            kubectl delete -f k8s/front-deploy.yaml
             kubectl apply -f k8s/front-deploy.yaml
         env:
           PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
           APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
           CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
           ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+
+
+
+
+
+
+
+
+
 
 
 
