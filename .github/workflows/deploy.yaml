@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  Build:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,18 +29,17 @@ jobs:
       - name: Push Docker image to Docker Hub
         run: |
           docker push srthealikk/frontend-project:latest
-
-      # 4. Kubernetes deployment-ı yeniləmə
-      - name: Set up kubectl
-        uses: actions/checkout@master
-
-      - name: Update Kubernetes Deployment
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: kubectl - Google Cloud GKE cluster.
         uses: ameydev/gke-kubectl-action@master
         env:
-          PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-          CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
-          ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
-          APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+          PROJECT_ID: ${{ env.PROJECT_ID }}
+          APPLICATION_CREDENTIALS: ${{ secrets.GKE_SA_KEY }}
+          CLUSTER_NAME: ${{ env.GKE_CLUSTER }}
+          ZONE_NAME: ${{ env.GKE_ZONE }}
         run: |
           kubectl set image deployment/frontend-deployment frontend=srthealikk/frontend:latest
           kubectl rollout restart deployment/frontend-deployment
