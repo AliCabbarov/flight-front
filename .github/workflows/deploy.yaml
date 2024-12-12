@@ -42,3 +42,5 @@ jobs:
         run: |
           kubectl set image deployment/frontend-deployment frontend=srthealikk/frontend:latest
           kubectl rollout restart deployment/frontend-deployment
+
+
