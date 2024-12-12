@@ -31,14 +31,14 @@ jobs:
           docker push srthealikk/frontend-project:latest
 
       # 4. Kubernetes deployment-ı yeniləmə
-      - name: Set up kubectl
-        uses: azure/setup-kubectl@v3
-        with:
-          version: 'latest'
-
-      - name: Update Kubernetes Deployment
+      - uses: actions/checkout@master
+      - name: kubectl - Google GKE cluster
+        uses: ameydev/gke-kubectl-action@master
         env:
-          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+          PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
+          ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+          APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
         run: |
           kubectl set image deployment/frontend-deployment frontend=srthealikk/frontend:latest
           kubectl rollout restart deployment/frontend-deployment
