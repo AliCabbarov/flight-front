@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: srthealikk/frontend-project:1.0.6
+          image: srthealikk/frontend-project:1.0.7
           ports:
             - containerPort: 80
