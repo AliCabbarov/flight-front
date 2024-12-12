@@ -33,16 +33,15 @@ jobs:
       # 4. Kubernetes deployment-ı yeniləmə
       - name: Checkout master branch
         uses: actions/checkout@v3
-        with:
-          ref: master  # Ensure this checks out the master branch
+
 
       - name: kubectl - Google GKE cluster
         uses: ameydev/gke-kubectl-action@master
-        env:
-          PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-          CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
-          ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
-          APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+#        env:
+#          PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+#          CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
+#          ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+#          APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
         run: |
           kubectl set image deployment/frontend-deployment frontend=srthealikk/frontend:latest
           kubectl rollout restart deployment/frontend-deployment
