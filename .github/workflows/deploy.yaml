@@ -42,7 +42,8 @@ jobs:
       - name: kubectl - Google Cloud GKE cluster
         uses: ameydev/gke-kubectl-action@master
         with:
-          args: apply -f k8s/front-deploy.yaml
+          - args: delete -f k8s/front-deploy.yaml
+          - args: apply -f k8s/front-deploy.yaml
         env:
           PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
           APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
