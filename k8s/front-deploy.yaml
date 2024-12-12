@@ -15,5 +15,6 @@ spec:
       containers:
         - name: frontend
           image: srthealikk/frontend-project:1.0.7
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
