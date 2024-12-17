@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  Build:
+  Deploy-frontend:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,20 +19,28 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Generate Docker tag
+        id: generate_tag
+        run: echo "tag=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+
+
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-project:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-project:${{ env.tag }} .
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/frontend-project:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/frontend-project:${{ env.tag }}
 
-  Deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+            - uses: actions/checkout@v3
         with:
           ref: main
+
+
+      - name: Update Kubernetes Deployment file
+        run: |
+          sed -i "s|^\([[:space:]]*image: \).*|\1${{ secrets.DOCKER_USERNAME }}/frontend-project:${{ env.tag }}|" k8s/front-deploy.yaml
+
 
       - name: kubectl - Google Cloud GKE cluster
         uses: ameydev/gke-kubectl-action@master
@@ -43,6 +51,7 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
           CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
           ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+
 
 
 
