@@ -27,7 +27,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         localStorage.setItem('token', token);
         localStorage.setItem('refreshToken', refreshToken);
         setTimeout(() => {
-          window.location.href = '../homapage/homepage.html';
+          window.location.href = '../homapage/index.html';
         });
       } else {
         const res = await response.json();

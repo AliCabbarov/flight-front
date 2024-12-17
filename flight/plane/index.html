@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plane Management</title>
+
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <h1>Plane Management</h1>
+    <nav class="nav">
+      <a href="../homapage/index.html">Back to Homepage</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <section class="plane-table-section">
+    <h2>Planes</h2>
+    <button id="createPlaneBtn" class="create-btn">+ Create Plane</button>
+    <table id="planeTable">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Capacity</th>
+        <th>Airline Name</th>
+        <th>Settings</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Rows will be dynamically added here -->
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<!-- Modal for Creating Plane -->
+<div id="createPlaneModal" class="modal">
+  <div class="modal-content">
+    <h3>Create Plane</h3>
+    <form id="createPlaneForm">
+      <label for="planeName">Plane Name:</label>
+      <input type="text" id="planeName" name="planeName" required>
+
+      <label for="airlineSelect">Airline:</label>
+      <select id="airlineSelect" name="airlineSelect" required>
+        <!-- Options will be dynamically added here -->
+      </select>
+
+      <label for="planePlacesSelect">Plane Places:</label>
+      <select id="planePlacesSelect" name="planePlacesSelect" multiple required>
+        <!-- Options will be dynamically added here -->
+      </select>
+
+      <button type="submit" class="submit-btn">Create</button>
+      <button type="button" id="closeModalBtn" class="cancel-btn">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2024 Plane Management System. All rights reserved.</p>
+</footer>
+
+<!-- Link to your JavaScript files -->
+<script src="../constants/index.js"></script> <!-- Constants -->
+<script src="../util/globalFunctions.js"></script> <!-- Utility functions -->
+<script src="index.js"></script> <!-- Main JS -->
+</body>
+</html>
