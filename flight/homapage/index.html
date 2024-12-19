@@ -3,53 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flight Reservation System</title>
-  <link rel="stylesheet" href="homepage.css">
+  <title>SkyWay - Flight Reservation System</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 <header class="header">
   <div class="container">
-    <h1>Flight Reservation System</h1>
+    <a href="/" class="logo">
+      <i data-lucide="plane-takeoff"></i>
+      <span>SkyWay</span>
+    </a>
     <nav class="nav">
-      <a href="#search">Search Flights</a>
-      <a href="#book">Book a Flight</a>
-      <a href="#about">About Us</a>
+      <a href="#search">Search</a>
+      <a href="#flights">Flights</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <!-- Plane Management Button -->
-      <a href="../plane" class="btn-plane-management">Plane</a>
     </nav>
+    <div class="header-actions">
+      <a href="../plane" class="btn btn-secondary">Plane Management</a>
+      <a href="../airline" class="btn btn-primary">Airline Management</a>
+    </div>
   </div>
 </header>
 
 <main class="main">
   <section class="hero">
-    <h2>Find Your Next Destination</h2>
-    <p>Plan your trip with the best flight deals and seamless booking experience.</p>
-    <a href="#search" class="btn">Search Flights</a>
+    <div class="container">
+      <h1>Find Your Next Adventure</h1>
+      <p>Discover amazing destinations and book your dream flight today.</p>
+      <a href="#search" class="btn btn-primary btn-large">Start Your Journey</a>
+    </div>
   </section>
 
   <section id="search" class="search-flights">
-    <h2>Search Flights</h2>
-    <form id="flightSearchForm">
-      <div class="form-group">
-        <label for="from">From</label>
-        <input type="text" id="from" placeholder="Enter departure city" required>
-      </div>
-      <div class="form-group">
-        <label for="to">To</label>
-        <input type="text" id="to" placeholder="Enter destination city" required>
-      </div>
-      <div class="form-group">
-        <label for="departureDate">Departure Date</label>
-        <input type="date" id="departureDate" required>
-      </div>
-      <button type="submit" class="btn">Search</button>
-    </form>
+    <div class="container">
+      <h2>Search Flights</h2>
+      <form id="flightSearchForm" class="search-form">
+        <div class="form-group">
+          <label for="from">From</label>
+          <div class="input-icon">
+            <i data-lucide="plane-takeoff"></i>
+            <input type="text" id="from" placeholder="Departure city" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="to">To</label>
+          <div class="input-icon">
+            <i data-lucide="plane-landing"></i>
+            <input type="text" id="to" placeholder="Destination city" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="departureDate">Departure Date</label>
+          <div class="input-icon">
+            <i data-lucide="calendar"></i>
+            <input type="date" id="departureDate" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">Search Flights</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="searchResults" class="search-results">
+    <div class="container">
+      <h2>Search Results</h2>
+      <!-- Search results will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <section id="flights" class="all-flights">
+    <div class="container">
+      <h2>All Flights</h2>
+      <table id="flightTable">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Price</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Departure Time</th>
+          <th>Arrival Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Flight data will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
   </section>
 </main>
 
 <footer class="footer">
-  <p>&copy; 2024 Flight Reservation System. All rights reserved.</p>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <i data-lucide="plane-takeoff"></i>
+        <span>SkyWay</span>
+      </div>
+      <p>&copy; 2024 SkyWay Flight Reservation System. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms of Service</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </div>
 </footer>
+
+<script src="../constants/index.js"></script>
+<script src="../util/globalFunctions.js"></script>
+<script src="index.js"></script>
+<script>
+  lucide.createIcons();
+</script>
 </body>
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airline Management</title>
+
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <h1>Airline Management</h1>
+    <nav class="nav">
+      <a href="../homapage/index.html">Back to Homepage</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <section class="airline-table-section">
+    <h2>Airlines</h2>
+    <button id="createAirlineBtn" class="create-btn">+ Create Airline</button>
+    <table id="airlineTable">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Settings</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Rows will be dynamically added here -->
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<!-- Modal for Creating Airline -->
+<div id="createAirlineModal" class="modal">
+  <div class="modal-content">
+    <h3>Create Airline</h3>
+    <form id="createAirlineForm">
+      <label for="airlineName">Airline Name:</label>
+      <input type="text" id="airlineName" name="airlineName" required>
+
+      <button type="submit" class="submit-btn">Create</button>
+      <button type="button" id="closeModalBtn" class="cancel-btn">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2024 Airline Management System. All rights reserved.</p>
+</footer>
+
+<!-- Link to your JavaScript files -->
+<script src="../constants/index.js"></script> <!-- Constants -->
+<script src="../util/globalFunctions.js"></script> <!-- Utility functions -->
+<script src="index.js"></script> <!-- Main JS -->
+</body>
+</html>
