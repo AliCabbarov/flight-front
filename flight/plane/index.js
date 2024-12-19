@@ -9,12 +9,11 @@ const fetchPlaneData = async () => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      new Error(`HTTP error! status: ${response.status}`);
     }
 
     // Parse the JSON response
-    const planeData = await response.json();
-    return planeData; // API response data
+    return await response.json(); // API response data
   } catch (error) {
     console.error("Error fetching plane data:", error);
     return null;
