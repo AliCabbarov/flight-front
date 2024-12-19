@@ -26,7 +26,6 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         responseMessage.textContent = 'Login successful!';
         localStorage.setItem('token', token);
         localStorage.setItem('refreshToken', refreshToken);
-        debugger;
         setTimeout(() => {
           window.location.href = '../homapage/index.html';
         });
