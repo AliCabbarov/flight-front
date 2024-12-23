@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkyWay - Flight Reservation System</title>
   <link rel="stylesheet" href="index.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 <header class="header">
@@ -23,6 +22,7 @@
     <div class="header-actions">
       <a href="../plane" class="btn btn-secondary">Plane Management</a>
       <a href="../airline" class="btn btn-primary">Airline Management</a>
+      <a href="../flight" class="btn btn-flight">Flight Management</a>
     </div>
   </div>
 </header>
@@ -44,21 +44,21 @@
           <label for="from">From</label>
           <div class="input-icon">
             <i data-lucide="plane-takeoff"></i>
-            <input type="text" id="from" placeholder="Departure city" required>
+            <input type="text" id="from" placeholder="Departure city">
           </div>
         </div>
         <div class="form-group">
           <label for="to">To</label>
           <div class="input-icon">
             <i data-lucide="plane-landing"></i>
-            <input type="text" id="to" placeholder="Destination city" required>
+            <input type="text" id="to" placeholder="Destination city">
           </div>
         </div>
         <div class="form-group">
           <label for="departureDate">Departure Date</label>
           <div class="input-icon">
             <i data-lucide="calendar"></i>
-            <input type="date" id="departureDate" required>
+            <input type="date" id="departureDate">
           </div>
         </div>
         <button type="submit" class="btn btn-primary btn-large">Search Flights</button>
@@ -111,7 +111,7 @@
     </div>
   </div>
 </footer>
-
+<script src="https://unpkg.com/lucide@latest"></script>
 <script src="../constants/index.js"></script>
 <script src="../util/globalFunctions.js"></script>
 <script src="index.js"></script>

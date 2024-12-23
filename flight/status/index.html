@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyWay - Flight Management</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <a href="/" class="logo">
+      <i data-lucide="plane-takeoff"></i>
+      <span>SkyWay</span>
+    </a>
+    <nav class="nav">
+      <a href="#pending">Pending Approvals</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <section id="pending" class="pending-approvals">
+    <div class="container">
+      <h2>Pending Approval Flights</h2>
+      <table id="pendingFlightTable">
+        <thead>
+        <tr>
+          <th>Operator Name</th>
+          <th>Operator Email</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Price</th>
+          <th>Ticket Count</th>
+          <th>Departure Time</th>
+          <th>Arrival Time</th>
+          <th>Actions</th>
+          <th>Feedback</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Pending flight data will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <i data-lucide="plane-takeoff"></i>
+        <span>SkyWay</span>
+      </div>
+      <p>&copy; 2024 SkyWay Flight Management System. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="index.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+<script src="../constants/index.js"></script>
+<script src="../util/globalFunctions.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

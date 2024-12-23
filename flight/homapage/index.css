@@ -96,6 +96,11 @@ body {
   color: var(--light-text-color);
 }
 
+.btn-flight {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+}
+
 .btn-secondary {
   background-color: var(--secondary-color);
   color: var(--light-text-color);
@@ -118,7 +123,7 @@ body {
 
 /* Hero section */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?airplane,travel');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img_1.png');
   background-size: cover;
   background-position: center;
   color: var(--light-text-color);
