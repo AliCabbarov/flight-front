@@ -174,3 +174,8 @@ body {
   }
 }
 
+.btn-status {
+  float: right;
+  background-color: blue;
+  color: lightblue;
+}

@@ -69,3 +69,40 @@ body {
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+  width: 120px; /* Buton genişliği eşit olur */
+}
+
+button:hover {
+  background-color: #2980b9; /* Hover (fare ile üzerine gelince) rengi */
+  color: white;
+}
+
+button:active {
+  transform: scale(0.98); /* Butona tıklandığında küçük bir animasyon */
+}
+
+button.approve {
+  background-color: #2ecc71; /* Onay butonunun rengi */
+  color: white;
+}
+
+button.reject {
+  background-color: #e74c3c; /* Red butonunun rengi */
+  color: white;
+}
+
+button.approve:hover {
+  background-color: #27ae60;
+}
+
+button.reject:hover {
+  background-color: #c0392b;
+}

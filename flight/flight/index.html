@@ -15,8 +15,7 @@
       <span>SkyWay</span>
     </a>
     <nav class="nav">
-      <a href="/">Home</a>
-      <a href="#" class="active">Create Flight</a>
+      <a href="../homapage">Home</a>
     </nav>
   </div>
   <div class="header-actions">
@@ -31,11 +30,15 @@
       <form id="createFlightForm" class="create-flight-form">
         <div class="form-group">
           <label for="from">From</label>
-          <input type="text" id="from" name="from" required>
+          <select id="from" name="from" required>
+            <!-- From destinations will be populated here -->
+          </select>
         </div>
         <div class="form-group">
           <label for="to">To</label>
-          <input type="text" id="to" name="to" required>
+          <select id="to" name="to" required>
+            <!-- To destinations will be populated here -->
+          </select>
         </div>
         <div class="form-group">
           <label for="price">Price</label>

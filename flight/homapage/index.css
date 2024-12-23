@@ -97,7 +97,7 @@ body {
 }
 
 .btn-flight {
-  background-color: var(--primary-color);
+  background-color: red;
   color: var(--light-text-color);
 }
 
